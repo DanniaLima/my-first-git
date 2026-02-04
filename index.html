@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 I nostri amici animali 🐾</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Emojis flutuantes decorativos -->
+    <div class="floating-emoji emoji1">🐱</div>
+    <div class="floating-emoji emoji2">🐼</div>
+    <div class="floating-emoji emoji3">🦋</div>
+    <div class="floating-emoji emoji4">🌈</div>
+
+    <div class="container">
+        <h1>I nostri amici animali</h1>
+
+        <div class="animal-section">
+            <h2>1. Il gattino curioso 🐱</h2>
+            
+            <div class="image-container">
+                <img src="gato.jpg" alt="Gattino curioso">
+            </div>
+
+            <div class="description">
+                <strong>Un piccolo gatto pronto a giocare in giardino.</strong>
+            </div>
+
+            <div class="description">
+                Questo gattino ha uno sguardo dolcissimo che scioglie il cuore. Passa le sue giornate a rincorrere farfalle e a fare le fusa sul divano.
+            </div>
+        </div>
+
+        <div class="animal-section">
+            <h2>2. Il panda dormiglione 🐼</h2>
+            
+            <div class="image-container">
+                <img src="panda.jpg" alt="Panda dormiglione">
+            </div>
+
+            <div class="description">
+                <strong>Un cucciolo di panda mentre fa merenda.</strong>
+            </div>
+
+            <div class="description">
+                Non c'è niente di più tenero di un panda che si rilassa. Sono animali molto pacifici e passano quasi tutto il tempo a mangiare e dormire.
+            </div>
+        </div>
+
+        <div class="fun-facts">
+            <h3>Curiosità divertenti:</h3>
+            <ul>
+                <li>I gatti possono fare più di 100 suoni vocali diversi</li>
+                <li>I panda giganti mangiano fino a 12 ore al giorno</li>
+                <li>Guardare foto di animali carini riduce lo stress!</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2025 Il Blog della Natura</p>
+        </footer>
+    </div>
+
+    <script>
+        // Adiciona efeito de confetti ao clicar
+        document.addEventListener('click', function(e) {
+            const colors = ['#ff6b9d', '#ffa07a', '#98d8c8', '#6c5b7b', '#ffeb3b'];
+            for(let i = 0; i < 5; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.left = e.clientX + 'px';
+                confetti.style.top = e.clientY + 'px';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.animation = 'confetti 2s linear forwards';
+                confetti.style.zIndex = '9999';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 2000);
+            }
+        });
+    </script>
+</body>
+</html>
