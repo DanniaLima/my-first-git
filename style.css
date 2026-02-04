@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Chewy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #ff6b9d, #c06c84, #6c5b7b, #355c7d);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    font-family: 'Comic Neue', cursive;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Patas animadas no fundo */
+body::before {
+    content: "🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾 🐾";
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    font-size: 40px;
+    opacity: 0.1;
+    animation: paws 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes paws {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(100vw) rotate(360deg); }
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    transform: rotate(-1deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(-1deg) translateY(0px); }
+    50% { transform: rotate(1deg) translateY(-20px); }
+}
+
+h1 {
+    font-family: 'Chewy', cursive;
+    font-size: 4em;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b9d, #ffa07a, #98d8c8, #6c5b7b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    animation: rainbow 3s ease infinite, wiggle 0.5s ease infinite;
+    position: relative;
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+h1::before {
+    content: "🌟";
+    position: absolute;
+    left: -60px;
+    animation: spin 2s linear infinite;
+}
+
+h1::after {
+    content: "🌟";
+    position: absolute;
+    right: -60px;
+    animation: spin 2s linear infinite reverse;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animal-section {
+    margin: 50px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30px;
+    border: 5px dashed #fff;
+    transform: rotate(1deg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.animal-section:hover {
+    transform: rotate(-2deg) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.animal-section:nth-child(even) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    transform: rotate(-1deg);
+}
+
+.animal-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    animation: pulse 4s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+h2 {
+    font-family: 'Chewy', cursive;
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.image-container {
+    width: 100%;
+    height: 350px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #fff;
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+}
+
+.image-container:hover {
+    transform: rotate(0deg) scale(1.1);
+    border-color: #ffeb3b;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+.description {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #333;
+    border-left: 10px solid #ffeb3b;
+    position: relative;
+    z-index: 1;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.description::before {
+    content: "💬";
+    position: absolute;
+    left: -40px;
+    top: 10px;
+    font-size: 2em;
+    animation: bounce 1s ease infinite;
+}
+
+.fun-facts {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    padding: 30px;
+    border-radius: 30px;
+    margin-top: 50px;
+    border: 5px dotted #e17055;
+    transform: rotate(-2deg);
+    animation: wiggle-section 3s ease infinite;
+}
+
+@keyframes wiggle-section {
+    0%, 100% { transform: rotate(-2deg); }
+    25% { transform: rotate(-1deg); }
+    75% { transform: rotate(-3deg); }
+}
+
+.fun-facts h3 {
+    font-family: 'Chewy', cursive;
+    font-size: 2.2em;
+    color: #d63031;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: shake 0.5s ease infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fun-facts li {
+    font-size: 1.3em;
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    position: relative;
+    padding-left: 50px;
+    transition: all 0.3s ease;
+    animation: popIn 0.5s ease backwards;
+}
+
+.fun-facts li:nth-child(1) { animation-delay: 0.1s; }
+.fun-facts li:nth-child(2) { animation-delay: 0.2s; }
+.fun-facts li:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fun-facts li:hover {
+    transform: translateX(10px) scale(1.05);
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.fun-facts li::before {
+    content: "🎈";
+    position: absolute;
+    left: 15px;
+    font-size: 1.5em;
+    animation: float-balloon 2s ease infinite;
+}
+
+@keyframes float-balloon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.fun-facts li:nth-child(2)::before {
+    content: "🎪";
+}
+
+.fun-facts li:nth-child(3)::before {
+    content: "🎨";
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 20px;
+    color: white;
+    font-size: 1.1em;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: "✨ ✨ ✨ ✨ ✨";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    opacity: 0.2;
+    animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(-50%) translateX(0); }
+    100% { transform: translateY(-50%) translateX(100%); }
+}
+
+/* Elementos decorativos flutuantes */
+.floating-emoji {
+    position: fixed;
+    font-size: 3em;
+    opacity: 0.6;
+    animation: float-around 10s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes float-around {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(100px, -100px) rotate(90deg); }
+    50% { transform: translate(0, -200px) rotate(180deg); }
+    75% { transform: translate(-100px, -100px) rotate(270deg); }
+}
+
+.emoji1 { top: 10%; left: 5%; animation-delay: 0s; }
+.emoji2 { top: 30%; right: 10%; animation-delay: 2s; }
+.emoji3 { bottom: 20%; left: 15%; animation-delay: 4s; }
+.emoji4 { top: 60%; right: 5%; animation-delay: 6s; }
+
+/* Confetti effect */
+@keyframes confetti {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
