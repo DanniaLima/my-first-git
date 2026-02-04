@@ -1,8 +1,8 @@
-#titolo
+# titolo
 My-first-git
 
-#descrizione
+# descrizione
 Primo progetto con git, con um semplice html
 
-#guida all'instalazione
+# guida all'instalazione
 apri il file index.html sul browser
